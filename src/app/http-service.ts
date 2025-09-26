@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  private readonly baseUrl = 'https://yield-prediction-fastapi.onrender.com/';
+  private readonly baseUrl = 'https://yield-prediction-fastapi.onrender.com';
 
   constructor(private http: HttpClient) {}
 

@@ -1,0 +1,169 @@
+<div class="page stack-xl">
+	<!-- Hero Section -->
+	<div class="text-center stack-md">
+		<h1 class="heading-xl">
+			AI-Powered Crop Yield
+			<span class="gradient-hero bg-clip-text text-transparent"> Prediction & Optimization</span>
+		</h1>
+		<p class="lead">
+			An intelligent platform that leverages machine learning models to predict crop yields using 
+			historical agricultural data, weather patterns, and soil health metrics, providing actionable 
+			recommendations for farmers across India.
+		</p>
+	</div>
+
+	<!-- Mission & Vision -->
+	<div class="grid-two">
+		<div class="card-elegant hover-lift">
+			<div class="card__header">
+				<h2 class="row-sm">
+					<span class="text-secondary">Mission</span>
+				</h2>
+			</div>
+			<div class="card__body">
+				<p class="text-muted">
+					To develop a scalable AI-based platform that helps small-scale farmers increase 
+					productivity by at least 10% through data-driven insights, with an interface 
+					supporting regional languages for accessibility across India.
+				</p>
+				<div class="divider"></div>
+				<div class="stack-sm">
+					<div class="text-small text-muted">Target Impact</div>
+					<div class="text-large font-semibold text-secondary">10%+ Productivity Increase</div>
+					<div class="text-meta">For small-scale farmers across India</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-elegant hover-lift">
+			<div class="card__header">
+				<h2 class="row-sm">
+					<span class="text-primary">Vision</span>
+				</h2>
+			</div>
+			<div class="card__body">
+				<p class="text-muted">
+					To revolutionize agriculture in India by providing farmers with accurate crop yield 
+					predictions and optimization recommendations tailored to specific crops and regional 
+					conditions, ensuring sustainable and profitable farming practices.
+				</p>
+				<div class="divider"></div>
+				<div class="stack-sm">
+					<div class="text-small text-muted">Geographic Coverage</div>
+					<div class="text-large font-semibold text-secondary">30 States</div>
+					<div class="text-meta">Comprehensive agricultural intelligence</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="space-y-8">
+		<div class="text-center">
+			<h2 class="heading-section" style="margin-bottom: var(--space-4)">Development Team</h2>
+			<p class="text-muted" style="max-width: 48rem; margin: 0 auto;">
+				Passionate developers and researchers working on the SIH hackathon project
+			</p>
+		</div>
+		<div class="grid-four">
+			<div *ngFor="let member of team" class="card-elegant hover-lift">
+				<div class="card__body text-center">
+					<h3 style="font-weight:600; margin-bottom: var(--space-1)">{{ member.name }}</h3>
+					<p class="text-small text-secondary" style="font-weight:500; margin-bottom: var(--space-2)">{{ member.role }}</p>
+					<p class="text-meta text-muted" style="margin-bottom: var(--space-2)">{{ member.expertise }}</p>
+					<span class="badge badge-secondary">{{ member.experience }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Technical Approach -->
+	<div class="space-y-8">
+		<div class="text-center">
+			<h2 class="heading-section" style="margin-bottom: var(--space-4)">Technical Implementation</h2>
+			<p class="text-muted" style="max-width: 48rem; margin: 0 auto;">
+				Our solution leverages advanced machine learning models and real-time data integration
+			</p>
+		</div>
+		<div class="grid-four">
+			<div *ngFor="let value of values" class="card-elegant text-center hover-lift">
+				<div class="card__body">
+					<div class="tech-icon" style="display:inline-flex; margin-bottom: var(--space-4)">
+						<span class="text-secondary font-semibold">{{ value.icon }}</span>
+					</div>
+					<h3 class="" style="font-weight:600; margin-bottom: var(--space-2)">{{ value.title }}</h3>
+					<p class="text-small text-muted" style="margin-bottom: var(--space-3)">{{ value.description }}</p>
+					<div class="divider"></div>
+					<div class="stack-sm">
+						<div class="text-meta text-muted">Key Feature</div>
+						<div class="text-small font-medium text-secondary">{{ getKeyFeature(value.title) }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Model Performance -->
+	<div class="space-y-8">
+		<div class="text-center">
+			<h2 class="heading-section" style="margin-bottom: var(--space-4)">Model Performance</h2>
+			<p class="text-muted">Key metrics from our XGBoost-based prediction system</p>
+		</div>
+		<div class="grid-four">
+			<div *ngFor="let a of achievements" class="card-hero text-center hover-lift">
+				<div class="card__body">
+					<div class="heading-lg text-secondary" style="margin-bottom: var(--space-2)">{{ a.number }}</div>
+					<p class="text-small text-muted" style="margin-bottom: var(--space-2)">{{ a.label }}</p>
+					<div class="divider"></div>
+					<div class="text-meta text-muted">{{ getAchievementDescription(a.label) }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Development Team -->
+	
+
+	<!-- Project Overview -->
+	<div class="card-elegant hover-lift">
+		<div class="card__header">
+			<h2 class="row-sm">
+				<span class="text-secondary">Project Overview</span>
+			</h2>
+			<p class="text-small text-muted">AI-Powered Crop Yield Prediction and Optimization</p>
+		</div>
+		<div class="card__body stack-sm text-muted">
+			<p>
+				This project addresses the critical need for data-driven agricultural insights in India. 
+				Developed for the Smart India Hackathon 2025 under the Agriculture, FoodTech & Rural 
+				Development theme, our solution leverages machine learning models to predict crop yields 
+				using historical agricultural data, weather patterns, and soil health metrics.
+			</p>
+			<p>
+				Our XGBoost-based model processes data from 54 different crops across 30 Indian states, 
+				utilizing target encoding for crops and states, plus one-hot encoding for 6 distinct seasons. 
+				The model is trained with 2000 estimators, a learning rate of 0.3, and early stopping at 50 
+				rounds to prevent overfitting and ensure optimal performance.
+			</p>
+			<p>
+				The model analyzes key agricultural factors including crop area, annual rainfall, fertilizer 
+				usage, pesticide application, and seasonal patterns to predict crop yield. The platform 
+				provides actionable recommendations for irrigation, fertilization, and pest control, tailored 
+				to specific crops and regional conditions. With support for regional languages and a focus 
+				on small-scale farmers, we aim to increase agricultural productivity by at least 10% through 
+				intelligent, data-driven farming practices.
+			</p>
+			<div class="divider"></div>
+			<div class="grid-two">
+				<div class="stack-sm">
+					<div class="text-small text-muted">Hackathon Theme</div>
+					<div class="text-large font-semibold text-secondary">Agriculture, FoodTech & Rural Development</div>
+				</div>
+				<div class="stack-sm">
+					<div class="text-small text-muted">Model Architecture</div>
+					<div class="text-large font-semibold text-secondary">XGBoost with 2000 Estimators</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA -->
+	
+</div>

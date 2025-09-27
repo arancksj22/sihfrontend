@@ -38,7 +38,7 @@ export class YieldPredictionFormComponent {
   ];
 
   protected readonly seasons = [
-    'Whole Year', 'Kharif', 'Rabi', 'Autumn', 'Summer', 'Winter'
+    'Whole Year ', 'Kharif', 'Rabi', 'Autumn', 'Summer', 'Winter'
   ];
 
   constructor(private fb: FormBuilder, private api: HttpService) {
@@ -59,10 +59,13 @@ export class YieldPredictionFormComponent {
     this.isSubmitting.set(true);
 
     const v = this.form.value as any;
+    // Ensure Season maintains exact backend-expected formatting: 'Whole Year ' (with trailing space)
+    const seasonRaw = String(v.season ?? '');
+    const seasonValue = seasonRaw.trim() === 'Whole Year' ? 'Whole Year ' : seasonRaw;
     const payload: PredictPayload = {
       Crop: String(v.crop).trim(),
       Crop_Year: Number(v.cropYear),
-      Season: String(v.season).trim(),
+      Season: seasonValue,
       State: String(v.state).trim(),
       Area: Number(v.area),
       Annual_Rainfall: Number(v.annualRainfall),
@@ -102,7 +105,7 @@ export class YieldPredictionFormComponent {
             createdAt: new Date()
           };
           this.predictionGenerated.emit(fallback);
-          alert('Prediction failed. Please ensure the backend is running at http://localhost:8000/predict');
+          alert('Prediction failed. Please ensure the backend is reachable at https://yield-prediction-fastapi.onrender.com/predict');
         }
       });
   }

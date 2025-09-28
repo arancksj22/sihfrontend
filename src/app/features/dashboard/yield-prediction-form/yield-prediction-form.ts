@@ -57,7 +57,7 @@ export class YieldPredictionFormComponent {
   protected submit() {
     if (this.form.invalid || this.isSubmitting()) return;
     this.isSubmitting.set(true);
-
+//form taking
     const v = this.form.value as any;
     // Ensure Season maintains exact backend-expected formatting: 'Whole Year ' (with trailing space)
     const seasonRaw = String(v.season ?? '');
